@@ -154,7 +154,7 @@ export default class LogarithmicScale extends Scale {
 	 * @return {string}
 	 */
 	getLabelForValue(value) {
-		return value === undefined ? '0' : new Intl.NumberFormat(this.options.locale).format(value);
+		return value === undefined ? '0' :  value.toString(); //new Intl.NumberFormat(this.options.locale).format(value);
 	}
 
 	getPixelForTick(index) {

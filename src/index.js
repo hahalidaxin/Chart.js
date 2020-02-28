@@ -57,9 +57,9 @@ for (const k in plugins) {
 	}
 }
 
-if (typeof window !== 'undefined') {
-	// @ts-ignore
-	window.Chart = Chart;
-}
+// if (typeof window !== 'undefined') {
+// 	// @ts-ignore
+// 	window.Chart = Chart;
+// }
 
 export default Chart;

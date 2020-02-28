@@ -1410,8 +1410,8 @@ export default class Scale extends Element {
 
 			// Make sure we draw text in the correct color and font
 			ctx.save();
-			ctx.translate(item.x, item.y);
-			ctx.rotate(item.rotation);
+			//ctx.translate(item.x, item.y);
+			//ctx.rotate(item.rotation);
 			ctx.font = tickFont.string;
 			ctx.fillStyle = tickFont.color;
 			ctx.textBaseline = 'middle';
@@ -1428,16 +1428,16 @@ export default class Scale extends Element {
 				for (j = 0, jlen = label.length; j < jlen; ++j) {
 					// We just make sure the multiline element is a string here..
 					if (useStroke) {
-						ctx.strokeText('' + label[j], 0, y);
+						ctx.strokeText('' + label[j], item.x, item.y + y);
 					}
-					ctx.fillText('' + label[j], 0, y);
+					ctx.fillText('' + label[j], item.x, item.y + y);
 					y += tickFont.lineHeight;
 				}
 			} else {
 				if (useStroke) {
-					ctx.strokeText(label, 0, y);
+					ctx.strokeText(label, item.x, item.y + y);
 				}
-				ctx.fillText(label, 0, y);
+				ctx.fillText(label, item.x, item.y + y);
 			}
 			ctx.restore();
 		}
@@ -1507,13 +1507,13 @@ export default class Scale extends Element {
 		}
 
 		ctx.save();
-		ctx.translate(scaleLabelX, scaleLabelY);
-		ctx.rotate(rotation);
+		//ctx.translate(scaleLabelX, scaleLabelY);
+		//ctx.rotate(rotation);
 		ctx.textAlign = textAlign;
 		ctx.textBaseline = 'middle';
 		ctx.fillStyle = scaleLabelFontColor; // render in correct colour
 		ctx.font = scaleLabelFont.string;
-		ctx.fillText(scaleLabel.labelString, 0, 0);
+		ctx.fillText(scaleLabel.labelString, scaleLabelX, scaleLabelY);
 		ctx.restore();
 	}
 

@@ -54,7 +54,7 @@ export class Animator {
 		}
 		me._running = true;
 
-		me._request = helpers.requestAnimFrame.call(window, () => {
+		me._request = helpers.requestAnimFrame(() => {
 			me._update();
 			me._request = null;
 

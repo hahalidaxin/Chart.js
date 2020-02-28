@@ -77,6 +77,9 @@ function mergeConfig(...args/* config objects ... */) {
 }
 
 function initConfig(config) {
+	if (typeof(config.wh) == 'undefined') {
+    	throw "property wh(reps width and height) is not defined";
+  	}
 	config = config || {};
 
 	// Do NOT use mergeConfig for the data object because this method merges arrays
@@ -193,8 +196,8 @@ export default class Chart {
 
 		const context = me.platform.acquireContext(initialCanvas, config);
 		const canvas = context && context.canvas;
-		const height = canvas && canvas.height;
-		const width = canvas && canvas.width;
+		const height = config.wh[0];
+		const width =  config.wh[1];
 
 		this.id = helpers.uid();
 		this.ctx = context;
@@ -304,13 +307,12 @@ export default class Chart {
 		const canvas = me.canvas;
 		const aspectRatio = options.maintainAspectRatio && me.aspectRatio;
 
-		if (width === undefined || height === undefined) {
-			width = getMaximumWidth(canvas);
-			height = getMaximumHeight(canvas);
-		}
-		// the canvas render width and height will be casted to integers so make sure that
+		// if (width === undefined || height === undefined) {
+		// 	width = getMaximumWidth(canvas);
+		// 	height = getMaximumHeight(canvas);
+		width = me.width;
+		height = me.height;
 		// the canvas display style uses the same integer values to avoid blurring effect.
-
 		// Set to 0 instead of canvas.size because the size defaults to 300x150 if the element is collapsed
 		const newWidth = Math.max(0, Math.floor(width));
 		const newHeight = Math.max(0, Math.floor(aspectRatio ? newWidth / aspectRatio : height));

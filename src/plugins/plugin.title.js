@@ -197,8 +197,8 @@ export class Title extends Element {
 		ctx.fillStyle = helpers.valueOrDefault(opts.fontColor, defaults.fontColor); // render in correct colour
 		ctx.font = fontOpts.string;
 
-		ctx.translate(titleX, titleY);
-		ctx.rotate(rotation);
+		// ctx.translate(titleX, titleY);
+		// ctx.rotate(rotation);
 		ctx.textAlign = align;
 		ctx.textBaseline = 'middle';
 
@@ -206,11 +206,11 @@ export class Title extends Element {
 		if (helpers.isArray(text)) {
 			let y = 0;
 			for (let i = 0; i < text.length; ++i) {
-				ctx.fillText(text[i], 0, y, maxWidth);
+				ctx.fillText(text[i], titleX, titleY + y, maxWidth);
 				y += lineHeight;
 			}
 		} else {
-			ctx.fillText(text, 0, 0, maxWidth);
+			ctx.fillText(text, titleX, titleY, maxWidth);
 		}
 
 		ctx.restore();

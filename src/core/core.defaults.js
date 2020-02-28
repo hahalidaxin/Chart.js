@@ -8,9 +8,6 @@ export class Defaults {
 		this.color = 'rgba(0,0,0,0.1)';
 		this.elements = {};
 		this.events = [
-			'mousemove',
-			'mouseout',
-			'click',
 			'touchstart',
 			'touchmove'
 		];

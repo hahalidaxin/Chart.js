@@ -296,6 +296,6 @@ export default class LinearScaleBase extends Scale {
 	}
 
 	getLabelForValue(value) {
-		return new Intl.NumberFormat(this.options.locale).format(value);
+		return  value.toString(); // new Intl.NumberFormat(this.options.locale).format(value);
 	}
 }

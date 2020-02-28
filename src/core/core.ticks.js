@@ -57,7 +57,7 @@ export default {
 
 			let numDecimal = -1 * Math.floor(logDelta);
 			numDecimal = Math.max(Math.min(numDecimal, 20), 0); // toFixed has a max of 20 decimal places
-			return new Intl.NumberFormat(locale, {minimumFractionDigits: numDecimal, maximumFractionDigits: numDecimal}).format(tickValue);
+			return tickValue.toString(); // new Intl.NumberFormat(locale, {minimumFractionDigits: numDecimal, maximumFractionDigits: numDecimal}).format(tickValue);
 		}
 	}
 };

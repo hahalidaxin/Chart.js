@@ -338,7 +338,7 @@ export default class Line extends Element {
 	 */
 	draw(ctx) {
 		const me = this;
-
+		ctx.restore();
 		if (!me.points.length) {
 			return;
 		}

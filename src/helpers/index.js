@@ -23,12 +23,12 @@ export default {
 
 	// Request animation polyfill
 	requestAnimFrame: (function() {
-		if (typeof window === 'undefined') {
-			return function(callback) {
-				callback();
-			};
-		}
-		return window.requestAnimationFrame;
+		// if (typeof window === 'undefined') {
+		// 	return function(callback) {
+		// 		callback();
+		// 	};
+		// }
+		return requestAnimationFrame;
 	}()),
 	// -- Canvas methods
 	fontString(pixelSize, fontStyle, fontFamily) {

@@ -151,12 +151,20 @@ export default class Rectangle extends Element {
 		ctx.save();
 
 		if (outer.w !== inner.w || outer.h !== inner.h) {
+			// ctx.beginPath();
+			// ctx.rect(outer.x, outer.y, outer.w, outer.h);
+			// ctx.clip();
+			// ctx.rect(inner.x, inner.y, inner.w, inner.h);
+			// ctx.fillStyle = options.borderColor;
+			// ctx.fill('evenodd');
+			ctx.restore();
+			const lineWidth = outer.w - inner.w;
 			ctx.beginPath();
 			ctx.rect(outer.x, outer.y, outer.w, outer.h);
-			ctx.clip();
-			ctx.rect(inner.x, inner.y, inner.w, inner.h);
-			ctx.fillStyle = options.borderColor;
-			ctx.fill('evenodd');
+			ctx.lineWidth = lineWidth;
+			ctx.strokeStyle = options.borderColor;
+			ctx.stroke();
+			ctx.restore();
 		}
 
 		ctx.fillStyle = options.backgroundColor;

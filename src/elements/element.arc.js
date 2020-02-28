@@ -161,6 +161,11 @@ export default class Arc extends Element {
 		ctx.fillStyle = options.backgroundColor;
 		ctx.strokeStyle = options.borderColor;
 
+		if (arc.innerRadius === 0) {
+        	arc.innerRadius = 1;
+      	}
+
+
 		if (arc.fullCircles) {
 			arc.endAngle = arc.startAngle + TAU;
 			ctx.beginPath();
