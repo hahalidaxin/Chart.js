@@ -10,7 +10,7 @@
 2、自行编译
 
 ```
-git clone https://github.com/hahalidaxin/Chart.js.git
+git clone https://github.com/hahalidaxin/quickapp-Chart.js.git
 cd Chart.js
 gulp build
 ```
@@ -27,7 +27,7 @@ Chart的配置参数添加wh([height, width])告知绘制高宽。
 
 ## 快应用示例
 
-[quickapp-Chart.js-sample]()
+[quickapp-Chart.js-sample](https://github.com/hahalidaxin/quickapp-Chart.js-sample)
 
 ## License
 
