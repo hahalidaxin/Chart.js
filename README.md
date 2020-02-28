@@ -29,6 +29,11 @@ Chart的配置参数添加wh([height, width])告知绘制高宽。
 
 [quickapp-Chart.js-sample](https://github.com/hahalidaxin/quickapp-Chart.js-sample)
 
+## 项目推荐
+
+目前更好的选择是
+[Apex-ui](https://vivoquickapp.github.io/apex-ui-docs/guide/charts.html)
+
 ## License
 
 Chart.js is available under the [MIT license](https://opensource.org/licenses/MIT).
